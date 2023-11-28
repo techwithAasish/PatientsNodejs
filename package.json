@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.6.3",
+    "node": "^21.0.0",
+    "restify": "^11.1.0",
+    "restify-errors": "^8.0.2"
+  },
+  "name": "patients",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "group6",
+  "license": "ISC",
+  "description": ""
+}
