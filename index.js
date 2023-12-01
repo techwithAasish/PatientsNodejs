@@ -1,6 +1,7 @@
 let SERVER_NAME = "patient-api";
 let PORT = 3000;
-let HOST = "192.168.2.95";
+// let HOST = "192.168.2.95";
+let HOST = "127.0.0.1";
 // let HOST = "10.24.32.80";
 
 const { log } = require("console");
@@ -269,7 +270,7 @@ server.get("/patients/:id/tests", function (req, res, next) {
 });
 
 // update patient info by their id
-server.put("/patients/:id/update", function (req, res, next) {
+server.put("/patients/:id", function (req, res, next) {
   console.log("Put /patients params=>" + JSON.stringify(req.params));
   console.log("Put /patients body=>" + JSON.stringify(req.body));
   // validation of manadatory fields
@@ -330,7 +331,7 @@ server.put("/patients/:id/update", function (req, res, next) {
 });
 
 // update patient test info
-server.put("/patients/tests/:id/update", function (req, res, next) {
+server.put("/patients/tests/:id", function (req, res, next) {
   console.log("Put /patients/tests params=>" + JSON.stringify(req.params));
   console.log("Put /patients/tests body=>" + JSON.stringify(req.body));
 

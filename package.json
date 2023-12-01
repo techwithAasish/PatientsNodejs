@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
     "mongodb": "^6.1.0",
     "mongoose": "^7.6.3",
     "node": "^21.0.0",
