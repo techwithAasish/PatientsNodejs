@@ -1,7 +1,8 @@
 let SERVER_NAME = "patient-api";
-let PORT = 10000;
+let PORT = 3000;
 // let HOST = "192.168.2.95";
-let HOST = "127.0.0.1";
+// let HOST = "127.0.0.1";
+let HOST = "0.0.0.0";
 // let HOST = "10.24.32.80";
 
 const { log } = require("console");
