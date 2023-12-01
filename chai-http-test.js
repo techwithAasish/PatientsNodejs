@@ -4,7 +4,8 @@ let expect = chai.expect;
 chai.use(chaiHttp);
 
 // define base uri for the REST API (lab03) under test
-const uri = "http://192.168.2.95:3000";
+// const uri = "http://192.168.2.95:3000";
+const uri = "http://127.0.0.1:3000";
 
 describe("when we issue a 'GET' to /patients", function () {
   it("should return HTTP 200", function (done) {
