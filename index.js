@@ -1,10 +1,11 @@
 let SERVER_NAME = "patient-api";
 let PORT = 3000;
-// let HOST = "192.168.2.95";
+// let PORT = 49633;
+let HOST = "192.168.2.95";
 // let HOST = "127.0.0.1";
-let HOST = "0.0.0.0";
+// let HOST = "0.0.0.0";
 // let HOST = "10.24.32.80";
-
+// let HOST = "142.186.77.173";
 const { log } = require("console");
 const { Int32 } = require("mongodb");
 const mongoose = require("mongoose");
@@ -36,9 +37,12 @@ const patientSchema = new mongoose.Schema({
   last_name: String,
   address: String,
   date_of_birth: String,
-  department: String,
-  doctor: String,
-  patient_id: String,
+  // department: String,
+  // doctor: String,
+  gender: String,
+  phoneNumber: String,
+  email_address: String,
+  // patient_id: String,
 });
 
 const patientTestSchema = new mongoose.Schema({
@@ -132,15 +136,27 @@ server.post("/patients", function (req, res, next) {
     // If there are any errors, pass them to next in the correct format
     return next(new errors.BadRequestError("date of birth must be supplied"));
   }
-  if (req.body.department === undefined) {
+  // if (req.body.department === undefined) {
+  //   // If there are any errors, pass them to next in the correct format
+  //   return next(new errors.BadRequestError("department must be supplied"));
+  // }
+  if (req.body.gender === undefined) {
     // If there are any errors, pass them to next in the correct format
-    return next(new errors.BadRequestError("department must be supplied"));
+    return next(new errors.BadRequestError("gender must be supplied"));
   }
-  if (req.body.doctor === undefined) {
+  // if (req.body.doctor === undefined) {
+  //   // If there are any errors, pass them to next in the correct format
+  //   return next(new errors.BadRequestError("doctor name must be supplied"));
+  // }
+  if (req.body.phoneNumber === undefined) {
     // If there are any errors, pass them to next in the correct format
-    return next(new errors.BadRequestError("doctor name must be supplied"));
+    return next(new errors.BadRequestError("phone number must be supplied"));
   }
-  if (req.body.patient_id === undefined) {
+  // if (req.body.patient_id === undefined) {
+  //   // If there are any errors, pass them to next in the correct format
+  //   return next(new errors.BadRequestError("patient id must be supplied"));
+  // }
+  if (req.body.email_address === undefined) {
     // If there are any errors, pass them to next in the correct format
     return next(new errors.BadRequestError("patient id must be supplied"));
   }
@@ -150,9 +166,12 @@ server.post("/patients", function (req, res, next) {
     last_name: req.body.last_name,
     address: req.body.address,
     date_of_birth: req.body.date_of_birth,
-    department: req.body.department,
-    doctor: req.body.doctor,
-    patient_id: req.body.patient_id,
+    // department: req.body.department,
+    // doctor: req.body.doctor,
+    // patient_id: req.body.patient_id,
+    gender: req.body.gender,
+    phoneNumber: req.body.phoneNumber,
+    email_address: req.body.email_address,
   });
 
   // Create the patient and save to db
